@@ -112,6 +112,19 @@ public class Film {
 			return false;
 		return true;
 	}
+	
+	public void displayInfo() {
+		System.out.println("Title: " + title);
+		System.out.println("Description: " + description);
+		System.out.println("Release Year: " + releaseYear);
+		System.out.println("Rating: " + rating);
+		System.out.println("Language: " + language);
+		System.out.println("List of Actors");
+		for(Actor actor: filmActors) {
+			System.out.println(actor);
+		}
+	}
+	
 	@Override
 	public String toString() {
 		return "Film [title=" + title + ", description=" + description + ",\n releaseYear=" + releaseYear

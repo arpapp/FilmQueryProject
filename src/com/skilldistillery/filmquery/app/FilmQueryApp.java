@@ -54,7 +54,7 @@ public class FilmQueryApp {
 				int filmID = input.nextInt();
 				Film result = (db.findFilmById(filmID));
 				if (result != null) {
-					System.out.println(result);
+					result.displayInfo();
 				}
 				break;
 			case 2:
@@ -64,7 +64,8 @@ public class FilmQueryApp {
 
 				if (results.size() != 0) {
 					for (Film film : results) {
-						System.out.println(film);
+						film.displayInfo();
+						System.out.println();
 					}
 				}
 				else {
