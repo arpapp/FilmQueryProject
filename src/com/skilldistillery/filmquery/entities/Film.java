@@ -8,7 +8,7 @@ public class Film {
 	private String description;
 	private Integer releaseYear;
 	private int language_id;
-	private String langauge;     //dee said
+	private String language;     //dee said
 	private int rentalDuration;
 	private double rentalRate;
 	private Integer length;
@@ -114,10 +114,8 @@ public class Film {
 	}
 	@Override
 	public String toString() {
-		return "Film [id=" + id + ", title=" + title + ", description=" + description + ", releaseYear=" + releaseYear
-				+ ", language_id=" + language_id + ", rentalDuration=" + rentalDuration + ", rentalRate=" + rentalRate
-				+ ", length=" + length + ", replacementCost=" + replacementCost + ", rating=" + rating
-				+ ", specialFeatures=" + specialFeatures + "]";
+		return "Film [title=" + title + ", description=" + description + ", releaseYear=" + releaseYear
+			    + ", rating=" + rating + ", language =" + language + "]";
 	}
 	public int getId() {
 		return id;
@@ -185,6 +183,23 @@ public class Film {
 	public void setSpecialFeatures(String specialFeatures) {
 		this.specialFeatures = specialFeatures;
 	}
+
+	public String getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+
+	public List<Actor> getFilmActors() {
+		return filmActors;
+	}
+
+	public void setFilmActors(List<Actor> filmActors) {
+		this.filmActors = filmActors;
+	}
+	
 	
 	
 }

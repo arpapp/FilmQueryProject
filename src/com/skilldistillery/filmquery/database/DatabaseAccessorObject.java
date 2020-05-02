@@ -26,7 +26,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 		String user = "student";
 		String pass = "student";
 		Connection conn = DriverManager.getConnection(URL, user, pass);
-		String sql = "select * from film where id = ?";
+		String sql = "select film.*, language.name from film join language on film.language_id = language.id where film.id = ?";
 		PreparedStatement psql = conn.prepareStatement(sql);
 		psql.setInt(1, filmId);
 		ResultSet rs = psql.executeQuery();
@@ -43,6 +43,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 			film.setReplacementCost(rs.getDouble("replacement_cost"));
 			film.setRating(rs.getString("rating"));
 			film.setSpecialFeatures(rs.getString("special_features"));
+			film.setLanguage(rs.getString("language.name"));
 		}
 		else {
 			System.out.println("No film found.");
@@ -85,27 +86,6 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 		return searchResult;
 	}
 
-	public Actor findActorById(int actorId) throws SQLException {
-		Actor actor = null;
-		String user = "student";
-		String pass = "student";
-		Connection conn = DriverManager.getConnection(URL, user, pass);
-		String sql = "SELECT id, first_name, last_name FROM actor WHERE id = ?";
-		PreparedStatement stmt = conn.prepareStatement(sql);
-		stmt.setInt(1, actorId);
-		ResultSet actorResult = stmt.executeQuery();
-		if (actorResult.next()) {
-			actor = new Actor();
-			actor.setId(actorResult.getInt(1));
-			actor.setFirstName(actorResult.getString(2));
-			actor.setLastName(actorResult.getString(3));
-		}
-		actorResult.close();
-		stmt.close();
-		conn.close();
-		return actor;
-	}
-
 
 	@Override
 	public List<Actor> findActorsByFilmId(int filmId){
@@ -135,6 +115,12 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 			E.printStackTrace();
 		}
 		return actorList;
+	}
+
+	@Override
+	public Actor findActorById(int actorId) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
