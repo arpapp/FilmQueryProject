@@ -97,7 +97,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 		String user = "student";
 		String pass = "student";
 		Connection conn = DriverManager.getConnection(URL, user, pass);
-		String sql = "SELECT actor.first_name, actor.last_name, film_actor.film_id\n" + "FROM actor\n"
+		String sql = "SELECT actor.first_name, actor.last_name, actor.id, film_actor.film_id\n" + "FROM actor\n"
 				+ "JOIN film_actor\n" + "ON film_actor.actor_id = actor.id\n" + "JOIN film\n"
 				+ "ON film.id = film_actor.film_id\n" + "WHERE film_id = ?";
 		PreparedStatement stmt = conn.prepareStatement(sql);
@@ -105,6 +105,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 		ResultSet actorFilmResult = stmt.executeQuery();
 		while (actorFilmResult.next()) {
 			actor = new Actor();
+			actor.setId(actorFilmResult.getInt("id"));
 			actor.setFirstName(actorFilmResult.getString("first_name"));
 			actor.setLastName(actorFilmResult.getString("last_name"));
 			actorList.add(actor);
