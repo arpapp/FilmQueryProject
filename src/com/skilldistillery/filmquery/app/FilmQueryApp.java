@@ -36,15 +36,15 @@ public class FilmQueryApp {
 
 		System.out.println("Welocme to Film Fiends!");
 		System.out.println();
-		System.out.println("What would you like to do?");
-		System.out.println("1. Look up a film by its ID");
-		System.out.println("2. Look up a film by a search keyword");
-		System.out.println("3. Exit the application");
-		System.out.println();
 
 		boolean menu = true;
 
 		while (menu) {
+			System.out.println("What would you like to do?");
+			System.out.println("1. Look up a film by its ID");
+			System.out.println("2. Look up a film by a search keyword");
+			System.out.println("3. Exit the application");
+			System.out.println();
 			System.out.print("Please enter your selection(1-3): ");
 			int selection = input.nextInt();
 			switch (selection) {
