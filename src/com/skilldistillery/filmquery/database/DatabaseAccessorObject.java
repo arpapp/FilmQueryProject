@@ -44,6 +44,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 			film.setRating(rs.getString("rating"));
 			film.setSpecialFeatures(rs.getString("special_features"));
 			film.setLanguage(rs.getString("language.name"));
+			film.setFilmActors(findActorsByFilmId(rs.getInt("id")));
 		}
 		else {
 			System.out.println("No film found.");
@@ -78,6 +79,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 			film.setReplacementCost(rs.getDouble("replacement_cost"));
 			film.setRating(rs.getString("rating"));
 			film.setSpecialFeatures(rs.getString("special_features"));
+			film.setFilmActors(findActorsByFilmId(rs.getInt("id")));
 			searchResult.add(film);
 		}
 		rs.close();
@@ -119,7 +121,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 
 	@Override
 	public Actor findActorById(int actorId) throws SQLException {
-		// TODO Auto-generated method stub
+		// not implemented
 		return null;
 	}
 

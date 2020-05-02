@@ -114,8 +114,8 @@ public class Film {
 	}
 	@Override
 	public String toString() {
-		return "Film [title=" + title + ", description=" + description + ", releaseYear=" + releaseYear
-			    + ", rating=" + rating + ", language =" + language + "]";
+		return "Film [title=" + title + ", description=" + description + ",\n releaseYear=" + releaseYear
+			    + ", rating=" + rating + ", language =" + language + ", list of actors=\n" + filmActors + "]";
 	}
 	public int getId() {
 		return id;
