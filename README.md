@@ -1,4 +1,4 @@
-##Overview
+## Overview
 
 This program serves as a way for a user to interact with a film database. Through this program, the user is able to view information about films and actors.
 
@@ -6,7 +6,7 @@ The program begins by prompting the user for what kind of information they would
 
 The methods within the Accessor obtain relevant film and actor information to then set it to new actor and film objects. The requested information is the displayed for each actor and film object.
 
-##Technologies used
+## Technologies used
 
 - Java
 - MySQL
@@ -16,7 +16,7 @@ The methods within the Accessor obtain relevant film and actor information to th
 - GitHub
 - MAMP
 
-##Lessons Learned
+## Lessons Learned
 
 This project was a good lesson in how Java programs can access and utilize database information. The biggest contributors to my knowledge were the methods in which information was obtained from a specified column and then used to set object fields. For me, this was a clear "connect-the-dots" moment between what is housed in a database and what is done/can be done in a Java program.
 
