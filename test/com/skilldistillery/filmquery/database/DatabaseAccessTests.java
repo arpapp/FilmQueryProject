@@ -22,7 +22,7 @@ class DatabaseAccessTests {
   }
 
   @Test
-  void test_getFilmById_with_invalid_id_returns_null() {
+  void test_getFilmById_with_invalid_id_returns_null() throws Exception {
     Film f = db.findFilmById(-42);
     assertNull(f);
   }

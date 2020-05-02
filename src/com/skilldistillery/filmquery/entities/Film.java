@@ -1,23 +1,46 @@
 package com.skilldistillery.filmquery.entities;
 
+import java.util.List;
+
 public class Film {
 	private int id;
 	private String title;
 	private String description;
 	private Integer releaseYear;
 	private int language_id;
+	private String langauge;     //dee said
 	private int rentalDuration;
 	private double rentalRate;
 	private Integer length;
 	private double replacementCost;
 	private String rating;
 	private String specialFeatures;
+	private List<Actor> filmActors;
 	
 	
 	public Film() {
 		
 	}
 	
+	public Film(int id, String title, String description, Integer releaseYear, int language_id, 
+			int rentalDuration, double rentalRate, Integer length, double replacementCost, String rating,
+			String specialFeatures) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.description = description;
+		this.releaseYear = releaseYear;
+		this.language_id = language_id;
+		this.rentalDuration = rentalDuration;
+		this.rentalRate = rentalRate;
+		this.length = length;
+		this.replacementCost = replacementCost;
+		this.rating = rating;
+		this.specialFeatures = specialFeatures;
+	}
+
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

@@ -12,6 +12,11 @@ public class Actor {
 	public Actor() {
 		
 	}
+	
+	public Actor(String fname, String lname) {
+		this.firstName = fname;
+		this.lastName = lname;
+	}
 
 	@Override
 	public int hashCode() {
