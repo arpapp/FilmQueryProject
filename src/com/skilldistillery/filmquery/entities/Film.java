@@ -124,6 +124,15 @@ public class Film {
 			System.out.println(actor);
 		}
 	}
+	public void displayMoreInfo() {
+		System.out.println("Film ID: " + id);
+		System.out.println("Language ID: " + language_id);
+		System.out.println("Rental duration: " + rentalDuration);
+		System.out.println("Rental rate: " + rentalRate);
+		System.out.println("Length: " + length);
+		System.out.println("Replacement cost: " + replacementCost);
+		System.out.println("Special features: " + specialFeatures);
+	}
 	
 	@Override
 	public String toString() {

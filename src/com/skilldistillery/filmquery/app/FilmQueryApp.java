@@ -54,6 +54,21 @@ public class FilmQueryApp {
 				Film result = (db.findFilmById(filmID));
 				if (result != null) {
 					result.displayInfo();
+					System.out.println();
+					boolean submenu = true;
+					while (submenu) {
+						System.out
+								.println("Would you like to (1) view all film details or (2) return to the main menu?");
+						System.out.println("Please enter your selection(1 or 2): ");
+						int selection2 = input.nextInt();
+						if (selection2 == 1) {
+							result.displayMoreInfo();
+						} else if (selection2 == 2) {
+							submenu = false;
+						} else {
+							System.out.println("Invalid selection.");
+						}
+					}
 				}
 				break;
 			case 2:
@@ -63,14 +78,14 @@ public class FilmQueryApp {
 
 				if (results.size() != 0) {
 					for (Film film : results) {
+						System.out.println();
 						film.displayInfo();
 						System.out.println();
 					}
-				}
-				else {
+				} else {
 					System.out.println("No results matching your keyword.");
 				}
-				
+
 				break;
 			case 3:
 				System.out.println("Thank you for using Film Fiends!");
